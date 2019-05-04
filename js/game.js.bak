@@ -12,6 +12,6 @@ var grassBackground = new Image();
 grassBackground.src = "../assets/sprites/grassField1.png";
 
 grassBackground.onload = function() {
-ctx.drawImage(grassBackground, 0, 0);
+ctx.drawImage(grassBackground, 0,0);
 }
 
