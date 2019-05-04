@@ -51,18 +51,38 @@ function tree() {
 }
 tree();
 
+//holds all fires
+var fireArr = [];
 
+//semi-random fire generation
 function fireGeneration() {
 	var fire = new Image();
 	fire.src = "../assets/sprites/fireAnimation.gif";
+	
+	//var coin = Math.floor(Math.random() * 2); //0,1
+	
+	var coin = Math.floor(Math.random() * 11); //0-10 
+
 	fire.onload = function() {
 		for(let i = 0; i < treeArr.length; i++) {
-	
+			if(coin < 3) { //1/3 chance of fires starting to appear
 			ctx.drawImage(fire, treeArr[i].x, treeArr[i].y);
+				fireArr.push({
+				x: treeArr[i].x,
+				y: treeArr[i].y
+				});
+			}
+			coin = Math.floor(Math.random() * 11);
 		}
 	}
 }
+
 fireGeneration();
+
+function fireExtinguish() {
+	
+	
+}
 
 /**********SECOND TREE GENERATION*********
 
