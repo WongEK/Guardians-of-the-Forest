@@ -1,6 +1,13 @@
+
+
 //startup variables
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
+var allTrees = [],
+    arrSize = 200,
+    arrWidth = 800,
+    arrHeight = 600;
+
 
 var userScore = 10;
 //can be used to hold score 
@@ -24,7 +31,24 @@ ctx.fillText("Score: " + userScore, 10, 30);
 }
 }
 
-grass();
+
+function tree1() {
+
+    for (let i = 0; i < 200; i++) {
+        
+        var tree = new Image();
+        tree.src = "../assets/sprites/tree.png";
+
+        tree.onload = function() {
+            var x  = Math.floor(Math.random() * 750);
+            var y = Math.floor(Math.random() * 550);
+            
+            ctx.drawImage(tree, x, y);
+                
+        }
+    }
+
+}
 
 //*********First tree generation method***********
 function tree() {
@@ -42,8 +66,10 @@ function tree() {
 	}
 	}
 }
-tree();
 
+
+grass();
+tree();
 
 
 //holds array for tree positions
