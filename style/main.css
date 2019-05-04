@@ -66,7 +66,11 @@ body {
     
 }
 
-/* Styling the game/content */
+/* Styling the content */
 #content {
     text-align: center;
+}
+
+#game {
+    padding-top: 10px;
 }
