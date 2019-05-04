@@ -1,14 +1,5 @@
-/* Import local Hellovetica font */
-@font-face {
-    font-family: "Hellovetica";
-    src: url('../assets/fonts/hellovetica.ttf') format('ttf');
-}
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
 
-/* Import local Superscript font */
-@font-face {
-    font-family: "Superscript";
-    src: url('../assets/fonts/SUPERSCR.TTF') format('ttf');
-}
 
 /* Style the header */
 .header {
@@ -22,10 +13,10 @@
 
 /* Style all header links */
 .header a {
-    font-size: 12pt;
+    font-size: 24pt;
     text-decoration: none;
     color: #005908;
-    padding: 12px;
+    padding: 5px;
     line-height: 25px;
     border-radius: 4px;
     margin: 5pt;
@@ -47,20 +38,22 @@
 .navigation {
     float: right;
     position: relative;
-    top: 13px;
+    top: 11px;
 }
 
 /* Styling for the site title */
 .site-title {
     float: left;
-    font-family: 'Superscript';
-    font-size: 36pt;
+    font-family: 'Press Start 2P';
+    font-size: 24pt;
+    word-spacing: -15px;
+    line-height: 50px;
 }
 
 /* body styling */
 body {
     background-color: #f4f4f4;
-    font-family: 'Hellovetica';
+    font-family: 'VT323';
     color: white;
     text-align: center;
     
