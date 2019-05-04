@@ -13,5 +13,10 @@ grassBackground.src = "../assets/sprites/grassField1.png";
 
 grassBackground.onload = function() {
 ctx.drawImage(grassBackground, 0, 0);
+ctx.font = "25pt Superscript";
+ctx.fillStyle = "white";
+ctx.fillText("Score: " + userScore, 10, 30);
+
 }
+
 
