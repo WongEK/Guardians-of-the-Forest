@@ -26,27 +26,45 @@ ctx.fillText("Score: " + userScore, 10, 30);
 
 grass();
 
+var treeArr[];
+
 //*********First tree generation method***********
 function tree() {
 	var tree = new Image();
 	tree.src = "../assets/sprites/tree.png";
 	tree.onload = function() {
-	for(let i = 0; i < 20; i++) {
+	for(let i = 0; i < 100; i++) {
 			var randX = Math.floor(Math.random() * 750);
-			var randY = Math.floor(Math.random() * 550);
+			var randY = Math.floor(Math.random() * 500 + 50);
+			treeArr.push({
+			x: randX,
+			y: randY
+			});
 			var randX2 = randX + 64;
 			var randY2 = randY + 64;
 			var dist1;
 			var dist2;
+		
 			ctx.drawImage(tree, randX, randY);
 	}
 	}
 }
-<<<<<<< HEAD
-
 tree();
 
 
+function fireGeneration() {
+	var fire = new Image();
+	fire.src = "../assets/sprites/fireAnimation.gif";
+	fire.onload = function() {
+		for(let i = 0; i < treeArr.length; i++) {
+	
+			ctx.drawImage(fire, treeArr[i].x, treeArr[i].y);
+		}
+	}
+}
+fireGeneration();
+
+/**********SECOND TREE GENERATION*********
 
 //holds array for tree positions
 var treeArray = [],
@@ -54,7 +72,7 @@ var treeArray = [],
     arrWidth = 800,
     arrHeight = 600;
 
-/**********SECOND TREE GENERATION*********
+
 //generates random positions for tree array
 function generateTreeArray(k) {
   var placed = 0,
