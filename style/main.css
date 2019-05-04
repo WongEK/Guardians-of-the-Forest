@@ -66,4 +66,5 @@ body {
 
 #game {
     padding-top: 10px;
+    background: url('../assets/sprites/grassField1.png');
 }

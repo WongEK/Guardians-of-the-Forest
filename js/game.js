@@ -2,57 +2,62 @@
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
 
+//add evenlistener to check for clicking fires
+canvas.addEventListener('click', fireExtinguish(), false);
+
+//variable for userscore
 var userScore = 10;
-//can be used to hold score 
+
 var dialogue = document.getElementById("dialogue");
 dialogue.innerHTML = "Score: " + userScore;
 
-
-//grass background image
-function grass() {
-//background image variable and load
-var grassBackground = new Image();
-grassBackground.src = "../assets/sprites/grassField1.png";
-
-
-grassBackground.onload = function() {
-ctx.drawImage(grassBackground, 0, 0);
-ctx.font = "25pt Superscript";
-ctx.fillStyle = "white";
-ctx.fillText("Score: " + userScore, 10, 30);
-
-}
+//Setup score
+function setupScore() {
+    ctx.font = "42pt VT323";
+    ctx.fillStyle = "white";
+    ctx.fillText("Score: " + userScore, 10, 35);
 }
 
-grass();
-
+//holds trees
 var treeArr = [];
-
-//*********First tree generation method***********
-function tree() {
-	var tree = new Image();
-	tree.src = "../assets/sprites/tree.png";
-	tree.onload = function() {
-	for(let i = 0; i < 100; i++) {
-			var randX = Math.floor(Math.random() * 750);
-			var randY = Math.floor(Math.random() * 500 + 50);
-			treeArr.push({
-			x: randX,
-			y: randY
-			});
-			var randX2 = randX + 64;
-			var randY2 = randY + 64;
-			var dist1;
-			var dist2;
-		
-			ctx.drawImage(tree, randX, randY);
-	}
-	}
-}
-tree();
 
 //holds all fires
 var fireArr = [];
+
+function genTrees() {
+    
+    //create tree image
+    var tree = new Image();
+	tree.src = "../assets/sprites/tree.png";
+    
+    //onload of tree
+	tree.onload = function() {
+        //for loop to push trees to array
+	    for(let i = 0; i < 200; i++) {
+           var randX = Math.floor(Math.random() * 750);
+           var randY = Math.floor(Math.random() * 500 + 50);
+           treeArr.push({
+               x: randX,
+               y: randY
+           });
+        }
+        //for loop to sort the trees
+        for (let i = 0; i < 200; i++) {
+            sortTrees(treeArr[0], treeArr[i]);    
+        }
+        //for loop to draw images
+        for (let i = 0; i < 200; i++) {
+            ctx.drawImage(tree, treeArr[i].x, treeArr[i].y);
+        }
+        //call the setup score function
+        setupScore();
+    }
+}
+
+//function to sort the trees
+function sortTrees() {    
+    treeArr.sort((a, b) => (a.y > b.y) ? 1 : -1);
+}
 
 //semi-random fire generation
 function fireGeneration() {
@@ -77,60 +82,13 @@ function fireGeneration() {
 	}
 }
 
-fireGeneration();
-
 function fireExtinguish() {
 	
+    userScore += 10;
 	
 }
 
-/**********SECOND TREE GENERATION*********
 
-//holds array for tree positions
-var treeArray = [],
-    arrSize = 100,
-    arrWidth = 800,
-    arrHeight = 600;
-
-
-//generates random positions for tree array
-function generateTreeArray(k) {
-  var placed = 0,
-      maxAttempts = k*10;
-  while(placed < k && maxAttempts > 0) {
-    var x = Math.floor(Math.random()* arrWidth),
-        y = Math.floor(Math.random()* arrHeight),
-        available = true;
-    for(var point in treeArray) {
-      if(Math.abs(point.x-x) < arrSize && Math.abs(point.y-y) < arrSize) {
-        available = false;
-        break;
-      }
-    }
-    if(available) {
-      treeArray.push({
-        x: x,
-        y: y
-      });
-      placed += 1;
-    }
-    maxAttempts -= 1;
-  }
-}
-
-generateTreeArray(100);
-console.log(treeArray);
-
-function placeTrees() {
-	var tree = new Image();
-	tree.src = "../assets/sprites/tree.png";
-	tree.onload = function() {
-		for(let i = 0; i < treeArray.length; i++){
-			ctx.drawImage(tree, treeArray[i].x, treeArray[i].y);	
-		}
-	}
-}
-
-placeTrees();
-
-*/
+/* ----- CALLING FUNCTIONS ----- */
+genTrees();
+fireGeneration();
