@@ -1,13 +1,13 @@
 /* Import local Hellovetica font */
 @font-face {
     font-family: "Hellovetica";
-    src: 'assets/fonts/hellovetica.ttf'
+    src: '../assets/fonts/hellovetica.ttf'
 }
 
 /* Import local Superscript font */
 @font-face {
     font-family: "Superscript";
-    src: 'assets/fonts/SUPERSCR.TTF';
+    src: '../assets/fonts/SUPERSCR.TTF';
 }
 
 /* Style the header */
