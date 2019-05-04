@@ -1,13 +1,13 @@
 /* Import local Hellovetica font */
 @font-face {
     font-family: "Hellovetica";
-    src: '../assets/fonts/hellovetica.ttf'
+    src: url('../assets/fonts/hellovetica.ttf') format('ttf');
 }
 
 /* Import local Superscript font */
 @font-face {
     font-family: "Superscript";
-    src: '../assets/fonts/SUPERSCR.TTF';
+    src: url('../assets/fonts/SUPERSCR.TTF') format('ttf');
 }
 
 /* Style the header */
@@ -37,23 +37,27 @@
     color: white;
 }
 
+/* Active links in header */
 .header a.active {
     background-color: #00840a;
     color: white;
 }
 
+/* Style the navigation */
 .navigation {
     float: right;
     position: relative;
     top: 13px;
 }
 
+/* Styling for the site title */
 .site-title {
     float: left;
     font-family: 'Superscript';
     font-size: 36pt;
 }
 
+/* body styling */
 body {
     background-color: #f4f4f4;
     font-family: 'Hellovetica';
@@ -62,6 +66,7 @@ body {
     
 }
 
+/* Styling the game/content */
 #content {
     text-align: center;
 }
