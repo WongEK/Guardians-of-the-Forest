@@ -27,7 +27,7 @@ myImage.addEventListener("load", loadImage, false);
 
 var fireCounter = 0;
 var secStage = false;
-var thiStage = false;
+var thStage = false;
 var foStage = false;
 var fiStage = false;
 var siStage = false;
@@ -180,8 +180,6 @@ function reGenFires() {
     newFire.onload = function() {
         
         for (let i = 0; i < fireArr.length; i++) {
-            //console.log(fireArr[i].x + " is the x");
-			 // console.log(fireArr[i].y + " is the y");
              if (fireArr[i].x && fireArr[i].y) {
                 ctx1.drawImage(newFire, fireArr[i].x, fireArr[i].y);
              }
@@ -192,6 +190,12 @@ function reGenFires() {
 }
 
 function makeFire() {
+    
+    if (fireArr.length == treeArr.length) {
+        
+        //game over code goes here
+        
+    }
     
     var f = new Image();
     f.src = 'assets/sprites/fireAnimation.gif';
@@ -271,9 +275,7 @@ function fireExtinguish(x, y) {
 	
     // Use the identity matrix while clearing the canvas
     ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-    
-    console.log('fire array length: ' + fireArr.length);
-    
+        
 	for (let i = 0; i < fireArr.length; i++) {
 		 
 	   // var x,y; //Click offsets, here I assume they already have the value
