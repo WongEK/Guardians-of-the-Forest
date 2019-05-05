@@ -21,8 +21,6 @@ function setupScore() {
 //holds trees
 var treeArr = [];
 
-var constTreeArr = [];
-
 //holds all fires
 var fireArr = [];
 
@@ -146,9 +144,25 @@ function fireExtinguish() {
     reGenTrees();
     reGenFires();
     
+}
+
+
+
+
+function canvasClicked() {
     
+    //var mouseX = e.clientX - canvas.offsetLet;
+    //var mouseY = e.clientY - canvas.offsetTop;
+    
+    //console.log(mouseX);
+    
+    
+    
+    
+    fireExtinguish();
     
 }
+
 
 
 /* ----- CALLING FUNCTIONS ----- */
