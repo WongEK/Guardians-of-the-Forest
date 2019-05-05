@@ -1,3 +1,4 @@
+/*Font facts*/
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
 
 @font-face{
@@ -5,10 +6,12 @@
     src: url('../assets/fonts/SUPERSCR.TTF') format('truetype');
 }
 
+/*Styling the body*/
 body{
     padding: 0;
     margin: 0;
 }
+
 /* Style the header */
 .header {
     background-color: #00aa0e;
@@ -72,33 +75,24 @@ body {
     text-align: center;
 }
 
+/*Styling for the game screen*/
 #game {
 
     padding-top: 10px;
     background: url('../assets/sprites/grassField1.png');
 }
 
-#facts {
-	color: black;
-	font-size: 2em;
-	
-
-    
-    background: url('../assets/sprites/grassField1.png');
-
-}
+/*Styling for the start screen*/
 #start{
     background: url('../assets/background/startBackground.png');
 }
 
+/*Styling for game over screen*/
 #gameOver{
     background: url('../assets/background/startBackground.png');
 }
 
-#popup{
-    background: url('../assets/background/popupBackground.png');
-}
-
-canvas{
+/*Styling for canvas*/
+canvas {
     margin: 0;
 }
