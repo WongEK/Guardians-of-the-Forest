@@ -82,7 +82,9 @@ function createText() {
     ctx2.fillStyle = "white";
     ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
     
-    ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
+    
+    ctx2.fillText('Tap the fires to put them out!', canvas2.width/7, canvas2.height/1.2);
+    //ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
 }
 
 // start button on start screen
