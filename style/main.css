@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
 
 
@@ -65,6 +66,7 @@ body {
 }
 
 #game {
+<<<<<<< HEAD
     padding-top: 10px;
     background: url('../assets/sprites/grassField1.png');
 }
@@ -73,5 +75,10 @@ body {
 	color: black;
 	font-size: 2em;
 	
+=======
+    
+    background: url('../assets/background/startBackground.png');
+
+>>>>>>> b54a354ffb728b3d48ca077c89208a9d233b74f9
 }
 
