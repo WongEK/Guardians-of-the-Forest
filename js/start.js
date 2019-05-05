@@ -30,7 +30,7 @@ myImage.addEventListener("load", loadImage, false);
 
 // Create variables for the gameover screen
 var gameOverScreen = new Image(); 
-gameOverScreen.src = "../assets/background/fireLong.png";
+gameOverScreen.src = "../assets/gameOver/gameOver.png";
 
 // Create variables for the fires
 var fireCounter = 0;
@@ -209,11 +209,10 @@ function makeFire() {
     var noMoreFires = false;
     
     // Check if the max fire limit is reached
-    if (fireArr.length > 160) {
+    if (fireArr.length > 180) {
         
         noMoreFires = true;
-        
-        //game over code goes here
+        ctx1.drawImage(gameOverScreen, 220, 200);
         
     }
     // Check if the game has started yet
