@@ -1,5 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
+
+@font-face{
+    font-family: 'Superscript';
+    src: url('../assets/fonts/SUPERSCR.TTF') format('truetype');
+}
 
 body{
     padding: 0;
@@ -10,7 +14,8 @@ body{
     background-color: #00aa0e;
     overflow: hidden;
     padding: 25px 10px;
-    border-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     text-align: center;
     color: white;
 }
@@ -48,9 +53,8 @@ body{
 /* Styling for the site title */
 .site-title {
     float: left;
-    font-family: 'Press Start 2P';
-    font-size: 24pt;
-    word-spacing: -15px;
+    font-family: 'Superscript';
+    font-size: 36pt;
     line-height: 50px;
 }
 

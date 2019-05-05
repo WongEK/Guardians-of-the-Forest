@@ -4,7 +4,7 @@ body {
 }
 
 /*Main container for facts*/
-#factContainer {
+.factContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,25 +14,26 @@ body {
   border-radius: 25px;
 }
 
-#factContainer:hover {
-  box-shadow: 3px 3px 5px #888888;
+.factContainer:hover {
+  box-shadow: 1px 1px 10px #888888;
+  background-color: #E4E4E4;
 }
 
 
 /*Controls the left side of the fact containter (The Text)*/
-#factText {
+.factText {
   text-align: center;
   flex-basis: 50%;
   padding: 10pt;
 }
 
 /*Controls the right side of the fact container (The image)*/
-#factImage {
+.factImage {
   flex-basis: 50%;
   text-align: center;
 }
 
-#factImage img {
+.factImage img {
   max-width: 65%;
   border-radius: 15pt;
   padding: 10pt;
