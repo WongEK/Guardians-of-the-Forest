@@ -151,7 +151,7 @@ function genTrees() {
     //onload of tree
 	tree.onload = function() {
         //for loop to push trees to array
-	    for (let i = 0; i < 10; i++) {
+	    for (let i = 0; i < 100; i++) {
            var randX = Math.floor(Math.random() * 750);
            var randY = Math.floor(Math.random() * 500 + 50);
            treeArr.push({
@@ -160,11 +160,11 @@ function genTrees() {
            });
         }
         //for loop to sort the trees
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 100; i++) {
             sortTrees(treeArr[0], treeArr[i]);    
         }
         //for loop to draw images
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 100; i++) {
             ctx1.drawImage(tree, treeArr[i].x, treeArr[i].y);
         }
         //call the setup score function
@@ -212,20 +212,13 @@ function reGenFires() {
 
 function makeFire() {
     
-<<<<<<< HEAD
-    if (fireArr.length == treeArr.length) {
-        //gameover screen
-        console.log("gameover screen");
-        ctx1.drawImage(gameOverScreen, 230, 200);
-=======
     var noMoreFires = false;
     
     if (fireArr.length > 100) {
         
         noMoreFires = true;
-        
-        //game over code goes here
->>>>>>> 1323f536ea81cf8e78edd5ec28166ade09ca1365
+        console.log("gameover screen");
+        ctx1.drawImage(gameOverScreen, 230, 200);
         
     }
     
@@ -240,7 +233,7 @@ function makeFire() {
         
         fireCounter++;
         
-        var t = Math.floor(Math.random() * 10);
+        var t = Math.floor(Math.random() * 100);
         
         var xVal = treeArr[t].x;
         var yVal = treeArr[t].y;
