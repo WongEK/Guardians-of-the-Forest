@@ -3,11 +3,32 @@ body {
   text-align: left;
 }
 
-.jumbotron {
-  border: 1px;
-  border-style: solid;
-  border-radius: 25px;
-  border-color: black;
-  margin-top: 5pt;
+/*Main container for facts*/
+#factContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10pt;
+  font-family: fantasy;
+  box-shadow: 1px 1px 25px #888888;
+
+}
+
+
+/*Controls the left side of the fact containter (The Text)*/
+#factText {
+  text-align: center;
+  flex-basis: 50%;
   padding: 10pt;
+}
+
+/*Controls the right side of the fact container (The image)*/
+#factImage {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+#factImage img {
+  max-width: 65%;
+  border-radius: 15pt;
 }
