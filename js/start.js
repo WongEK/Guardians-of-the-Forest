@@ -14,6 +14,7 @@ var canvas3 = document.getElementById("gameOver");
 document.getElementById("gameOver").style.display = "none";
 
 var header = 'Guardians of the Forest';
+var instructions = 'Tap the fires to put them out!';
 var startBackground = new Image();
 startBackground.src = "../assets/background/startBackground.png";
 var loaded = false;
@@ -93,7 +94,6 @@ function createText() {
     ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
     
     
-    ctx2.fillText('Tap the fires to put them out!', canvas2.width/7, canvas2.height/1.2);
     //ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
 }
 
@@ -123,6 +123,11 @@ function setupScore() {
     ctx1.font = "42pt VT323";
     ctx1.fillStyle = "white";
     ctx1.fillText("Score: " + userScore, 10, 35);
+    
+    ctx2.font = "20px 'Press Start 2P";
+    ctx2.fillStyle = 'white';
+    ctx2.fillText(instructions, canvas2.width/7, canvas2.height/1.2);
+
 }
 
 //holds trees
@@ -207,15 +212,27 @@ function reGenFires() {
 
 function makeFire() {
     
+<<<<<<< HEAD
     if (fireArr.length == treeArr.length) {
         //gameover screen
         console.log("gameover screen");
         ctx1.drawImage(gameOverScreen, 230, 200);
+=======
+    var noMoreFires = false;
+    
+    if (fireArr.length > 100) {
+        
+        noMoreFires = true;
+        
+        //game over code goes here
+>>>>>>> 1323f536ea81cf8e78edd5ec28166ade09ca1365
         
     }
     
     if (startedGame == true) {
     
+    if (noMoreFires == false) {
+        
     var f = new Image();
     f.src = 'assets/sprites/fireAnimation.gif';
     
@@ -260,6 +277,7 @@ function makeFire() {
     if (fireCounter > 25 && siStage == false) {
         sixthStage();
         siStage = true;
+    }
     }
     }
 
