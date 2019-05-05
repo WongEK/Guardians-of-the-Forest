@@ -9,9 +9,13 @@ body {
   flex-direction: row;
   align-items: center;
   margin-top: 10pt;
-  font-family: fantasy;
+  font-family: 'Titillium Web', sans-serif;
   box-shadow: 1px 1px 25px #888888;
+  border-radius: 25px;
+}
 
+#factContainer:hover {
+  box-shadow: 3px 3px 5px #888888;
 }
 
 
@@ -31,4 +35,5 @@ body {
 #factImage img {
   max-width: 65%;
   border-radius: 15pt;
+  padding: 10pt;
 }
