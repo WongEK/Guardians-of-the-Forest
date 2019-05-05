@@ -30,8 +30,18 @@ button.addEventListener("load", loadButton, false);
 var myImage = new Image();
 myImage.src = "../assets/background/fireLong.png";
 myImage.addEventListener("load", loadImage, false);
+
 var gameOverScreen = new Image(); 
 gameOverScreen.src = "../assets/background/fireLong.png";
+
+
+var fireCounter = 0;
+var secStage = false;
+var thStage = false;
+var foStage = false;
+var fiStage = false;
+var siStage = false;
+var startedGame = false;
 
 
 
@@ -40,9 +50,8 @@ ctx2.canvas.addEventListener('click', function(e){
     ctx2.translate(0, 0);
     var mouseX = e.clientX;
     var mouseY = e.clientY;
-    console.log(mouseX);
-    console.log(mouseY);
     if (mouseX > 591 && mouseX < 749 && mouseY > 245 && mouseY < 391){
+        startedGame = true;
         swapCanvases();
     }
 
@@ -78,10 +87,14 @@ function animate() {
     
 }
 //Guardians of the Gorest title on the screen
-function createText(){
+function createText() {
     ctx2.font ="20px 'Press Start 2P'";
     ctx2.fillStyle = "white";
     ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
+    
+    
+    ctx2.fillText('Tap the fires to put them out!', canvas2.width/7, canvas2.height/1.2);
+    //ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
 }
 
 // start button on start screen
@@ -90,19 +103,6 @@ function loadButton(e){
 
 }
 
-
-
-/* Code related to game */
-
-
-//plays music, node.js doesn't run require on browser/client
-/**var player = require('play-sound')(opts = {})
-
- player.play('assets/sounds/gameSounds.mp3', function (err) {
-   if (err) throw err;
-   console.log("Audio finished");
- });
-*/
 //add evenlistener to check for clicking fires
 ctx1.canvas.addEventListener('mousedown', function(e) {
 	var loc = windowToCanvas(e.clientX, e.clientY);
@@ -154,7 +154,10 @@ function genTrees() {
                y: randY
            });
         }
-        
+        //for loop to sort the trees
+        for (let i = 0; i < 200; i++) {
+            sortTrees(treeArr[0], treeArr[i]);    
+        }
         //for loop to draw images
         for (let i = 0; i < 200; i++) {
             ctx1.drawImage(tree, treeArr[i].x, treeArr[i].y);
@@ -184,31 +187,6 @@ function reGenTrees() {
     
 }
 
-//semi-random fire generation
-function fireGeneration() {
-	
-	
-	//var coin = Math.floor(Math.random() * 2); //0,1
-	
-	var coin = Math.floor(Math.random() * 11); //0-10 
-
-	fire.onload = function() {
-		for (let i = 0; i < treeArr.length; i++) {
-			if(coin < 3) { //1/3 chance of fires starting to appear
-			ctx1.drawImage(fire, treeArr[i].x, treeArr[i].y);
-				fireArr.push({
-				x: treeArr[i].x,
-				y: treeArr[i].y
-				});
-				//fireArr[i].addEventListener('click', fireExtinguish(), false);
-			}
-			coin = Math.floor(Math.random() * 11);
-		}
-	}
-}
-
-
-
 // Re-Draw fires
 function reGenFires() {
     
@@ -218,8 +196,6 @@ function reGenFires() {
     newFire.onload = function() {
         
         for (let i = 0; i < fireArr.length; i++) {
-            //console.log(fireArr[i].x + " is the x");
-			 // console.log(fireArr[i].y + " is the y");
              if (fireArr[i].x && fireArr[i].y) {
                 ctx1.drawImage(newFire, fireArr[i].x, fireArr[i].y);
              }
@@ -229,13 +205,96 @@ function reGenFires() {
     }
 }
 
+function makeFire() {
+    
+    if (fireArr.length == treeArr.length) {
+        
+        //game over code goes here
+        
+    }
+    
+    if (startedGame == true) {
+    
+    var f = new Image();
+    f.src = 'assets/sprites/fireAnimation.gif';
+    
+    f.onload = function() {
+        
+        fireCounter++;
+        
+        var t = Math.floor(Math.random() * 200);
+        
+        var xVal = treeArr[t].x;
+        var yVal = treeArr[t].y;
+        
+        fireArr.push({
+            x: xVal,
+            y: yVal
+        });
+        
+        ctx1.drawImage(f, xVal, yVal);
+        
+    }
+    
+    if (fireCounter > 5 && secStage == false) {
+        secondStage();
+        secStage = true;
+    }
+    
+    if (fireCounter > 10 && thStage == false) {
+        thirdStage();
+        thStage = true;
+    }
+    
+    if (fireCounter > 15 && foStage == false) {
+        fourthStage();
+        foStage = true;
+    }
+    
+    if (fireCounter > 20 && fiStage == false) {
+        fifthStage();
+        fiStage = true;
+    }
+    
+    if (fireCounter > 25 && siStage == false) {
+        sixthStage();
+        siStage = true;
+    }
+    }
+
+}
+
+function firstStage() {
+    setInterval(makeFire, 3000);
+
+}
+
+function secondStage() {
+    setInterval(makeFire, 2500);
+}
+
+function thirdStage() {
+    setInterval(makeFire, 2000);
+}
+
+function fourthStage() {
+    setInterval(makeFire, 1500);
+}
+
+function fifthStage() {
+    setInterval(makeFire, 1000);
+}
+
+function sixthStage() {
+    setInterval(makeFire, 500);
+}
 
 //Extinguish the fire clicked
 function fireExtinguish(x, y) {
 	
     // Use the identity matrix while clearing the canvas
     ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-    
+        
 	for (let i = 0; i < fireArr.length; i++) {
 		 
 	   // var x,y; //Click offsets, here I assume they already have the value
@@ -244,7 +303,7 @@ function fireExtinguish(x, y) {
         var endx = posx + fire.width -30;
         var endy = posy + fire.height -10;
 
-        if( (x>posx && y>posy) && (x<endx && y<endy) ) {
+        if( (x > posx && y > posy) && (x < endx && y < endy)) {
             userScore += 10;
             fireArr[i].x = null;
 			fireArr[i].y = null;
@@ -258,14 +317,17 @@ function fireExtinguish(x, y) {
 }
 
 /* ----- CALLING FUNCTIONS ----- */
+
 genTrees();
+
 fireGeneration();
-
-
 
 
 
 /* Gameover screen generations */
 
+
+
+firstStage();
 
 
