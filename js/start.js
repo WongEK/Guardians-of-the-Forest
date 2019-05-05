@@ -41,6 +41,9 @@ var fiStage = false;
 var siStage = false;
 var startedGame = false;
 
+// Variable to hold whether or not the game is over
+var noMoreFires = false;
+
 // Variable for userscore
 var userScore = 0;
 
@@ -126,8 +129,10 @@ function loadButton(e){
 
 // Add eventlistener to check for clicking fires
 ctx1.canvas.addEventListener('mousedown', function(e) {
-	var loc = windowToCanvas(e.clientX, e.clientY);
-	fireExtinguish(loc.x, loc.y);
+    if (noMoreFires == false) {
+	   var loc = windowToCanvas(e.clientX, e.clientY);
+	   fireExtinguish(loc.x, loc.y);
+    }
 });
 
 // Gets the correct cordinates of the canvas
@@ -205,14 +210,11 @@ function reGenFires() {
 // Function to make the fires
 function makeFire() {
     
-    // Variable to hold whether or not the game is over
-    var noMoreFires = false;
-    
     // Check if the max fire limit is reached
     if (fireArr.length > 180) {
         
         noMoreFires = true;
-        ctx1.drawImage(gameOverScreen, 220, 200);
+        ctx1.drawImage(gameOverScreen, 240, 200);
         
     }
     // Check if the game has started yet
