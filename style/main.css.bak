@@ -1,3 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
+
+
+/* Style the header */
+.header {
+    background-color: #00aa0e;
+    overflow: hidden;
+    padding: 25px 10px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+/* Style all header links */
+.header a {
+    font-size: 24pt;
+    text-decoration: none;
+    color: #005908;
+    padding: 5px;
+    line-height: 25px;
+    border-radius: 4px;
+    margin: 5pt;
+}
+
+/* Style header links on hover */
+.header a:hover {
+    background-color: #005908;
+    color: white;
+}
+
+/* Active links in header */
+.header a.active {
+    background-color: #00840a;
+    color: white;
+}
+
+/* Style the navigation */
+.navigation {
+    float: right;
+    position: relative;
+    top: 11px;
+}
+
+/* Styling for the site title */
+.site-title {
+    float: left;
+    font-family: 'Press Start 2P';
+    font-size: 24pt;
+    word-spacing: -15px;
+    line-height: 50px;
+}
+
+/* body styling */
+body {
+    background-color: #f4f4f4;
+    font-family: 'VT323';
+    color: white;
+    text-align: center;
+    
+}
+
+/* Styling the content */
+#content {
+    text-align: center;
+}
+
 #game {
-	text-align: center;
+    padding-top: 10px;
+    background: url('../assets/sprites/grassField1.png');
+}
+
+#facts {
+	color: black;
+	font-size: 2em;
+	
+}
+
+#pic {
+	margin-top: 100px;
 }

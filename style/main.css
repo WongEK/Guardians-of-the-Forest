@@ -68,3 +68,10 @@ body {
     padding-top: 10px;
     background: url('../assets/sprites/grassField1.png');
 }
+
+#facts {
+	color: black;
+	font-size: 2em;
+	
+}
+

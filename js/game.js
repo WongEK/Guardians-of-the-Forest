@@ -82,9 +82,11 @@ function fireGeneration() {
 	}
 }
 
+
 function fireExtinguish() {
 	
     userScore += 10;
+	console.log("User score is: " + userScore);
 	
 }
 
