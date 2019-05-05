@@ -13,8 +13,6 @@ var ctx2 = canvas2.getContext("2d");
 var canvas3 = document.getElementById("gameOver");
 document.getElementById("gameOver").style.display = "none";
 
-
-var ctx2 = canvas2.getContext("2d");
 var header = 'Guardians of the Forest';
 var startBackground = new Image();
 startBackground.src = "../assets/background/startBackground.png";
@@ -32,7 +30,9 @@ myImage.src = "../assets/background/fireLong.png";
 myImage.addEventListener("load", loadImage, false);
 
 var gameOverScreen = new Image(); 
-gameOverScreen.src = "../assets/background/fireLong.png";
+gameOverScreen.src = "../assets/gameOver/gameOver.png";
+
+
 
 
 var fireCounter = 0;
@@ -146,7 +146,7 @@ function genTrees() {
     //onload of tree
 	tree.onload = function() {
         //for loop to push trees to array
-	    for (let i = 0; i < 200; i++) {
+	    for (let i = 0; i < 10; i++) {
            var randX = Math.floor(Math.random() * 750);
            var randY = Math.floor(Math.random() * 500 + 50);
            treeArr.push({
@@ -155,11 +155,11 @@ function genTrees() {
            });
         }
         //for loop to sort the trees
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 10; i++) {
             sortTrees(treeArr[0], treeArr[i]);    
         }
         //for loop to draw images
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 10; i++) {
             ctx1.drawImage(tree, treeArr[i].x, treeArr[i].y);
         }
         //call the setup score function
@@ -179,7 +179,7 @@ function reGenTrees() {
 	newTree.src = "assets/sprites/tree.png";
     
     newTree.onload = function() {
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 10; i++) {
             ctx1.drawImage(newTree, treeArr[i].x, treeArr[i].y);
         }
         setupScore();
@@ -208,8 +208,9 @@ function reGenFires() {
 function makeFire() {
     
     if (fireArr.length == treeArr.length) {
-        
-        //game over code goes here
+        //gameover screen
+        console.log("gameover screen");
+        ctx1.drawImage(gameOverScreen, 230, 200);
         
     }
     
@@ -222,7 +223,7 @@ function makeFire() {
         
         fireCounter++;
         
-        var t = Math.floor(Math.random() * 200);
+        var t = Math.floor(Math.random() * 10);
         
         var xVal = treeArr[t].x;
         var yVal = treeArr[t].y;
@@ -319,14 +320,6 @@ function fireExtinguish(x, y) {
 /* ----- CALLING FUNCTIONS ----- */
 
 genTrees();
-
-fireGeneration();
-
-
-
-/* Gameover screen generations */
-
-
 
 firstStage();
 
