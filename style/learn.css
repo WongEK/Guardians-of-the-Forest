@@ -4,6 +4,10 @@ body {
 }
 
 /*Main container for facts*/
+a {
+  text-decoration: none;
+}
+
 .factContainer {
   display: flex;
   flex-direction: row;
