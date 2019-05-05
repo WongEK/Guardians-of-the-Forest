@@ -31,6 +31,7 @@ var thStage = false;
 var foStage = false;
 var fiStage = false;
 var siStage = false;
+var startedGame = false;
 
 
 //Event listener for start screen
@@ -39,6 +40,7 @@ ctx2.canvas.addEventListener('click', function(e){
     var mouseX = e.clientX;
     var mouseY = e.clientY;
     if (mouseX > 591 && mouseX < 749 && mouseY > 245 && mouseY < 391){
+        startedGame = true;
         swapCanvases();
     }
 
@@ -75,10 +77,12 @@ function animate() {
     
 }
 //Guardians of the Gorest title on the screen
-function createText(){
+function createText() {
     ctx2.font ="20px 'Press Start 2P'";
     ctx2.fillStyle = "white";
     ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
+    
+    ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
 }
 
 // start button on start screen
@@ -197,6 +201,8 @@ function makeFire() {
         
     }
     
+    if (startedGame == true) {
+    
     var f = new Image();
     f.src = 'assets/sprites/fireAnimation.gif';
     
@@ -241,6 +247,7 @@ function makeFire() {
     if (fireCounter > 25 && siStage == false) {
         sixthStage();
         siStage = true;
+    }
     }
 
 }
@@ -298,5 +305,7 @@ function fireExtinguish(x, y) {
 }
 
 /* ----- CALLING FUNCTIONS ----- */
+
 genTrees();
 firstStage();
+
