@@ -94,7 +94,6 @@ function createText() {
     ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
     
     
-    ctx2.fillText(instructions, canvas2.width/7, canvas2.height/1.2);
     //ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
 }
 
@@ -124,6 +123,11 @@ function setupScore() {
     ctx1.font = "42pt VT323";
     ctx1.fillStyle = "white";
     ctx1.fillText("Score: " + userScore, 10, 35);
+    
+    ctx2.font = "20px 'Press Start 2P";
+    ctx2.fillStyle = 'white';
+    ctx2.fillText(instructions, canvas2.width/7, canvas2.height/1.2);
+
 }
 
 //holds trees
