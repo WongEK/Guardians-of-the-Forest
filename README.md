@@ -40,6 +40,7 @@ With JavaScript, everything can feel difficult. That being said, the most involv
 
 <br>
 
+
 <b>What are the next steps to complete the project?</b>
 In order to complete the project, we would like to implement more of the features we wanted. Features such as: trees growing over time just like the fires, tree variations(different tree types), sounds effects and music, leaderboard of the top 10 scores on a global scale as well as your score and position (rank 53 score: 10000), restart game button (retry), fire animations, informational popups whenever a fire is doused, natural causes of fire animations such as lightning & smoking, more information on the learn page, about page. 
 
