@@ -46,7 +46,7 @@ In order to complete the project, we would like to implement more of the feature
 
 
 
-<b>Resources utilised:</b><br>
+<br><br><b>Resources utilised:</b><br>
 https://firebase.google.com - Firebase, used for hosting the site<br>
 https://www.piskelapp.com - Piskel, a pixel art editor<br>
 https://www.urbanfonts.com/fonts/superscript.htm - Superscript font<br>
