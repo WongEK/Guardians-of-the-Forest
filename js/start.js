@@ -148,7 +148,10 @@ function genTrees() {
                y: randY
            });
         }
-        
+        //for loop to sort the trees
+        for (let i = 0; i < 200; i++) {
+            sortTrees(treeArr[0], treeArr[i]);    
+        }
         //for loop to draw images
         for (let i = 0; i < 200; i++) {
             ctx1.drawImage(tree, treeArr[i].x, treeArr[i].y);
