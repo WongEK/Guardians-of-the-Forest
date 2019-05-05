@@ -7,3 +7,11 @@ Created by team 9:
 -Josh
 -Edmond
 -Sasha
+
+
+Resources utilised:
+
+https://www.iamcal.com/misc/fonts/ - Hellovetica font,
+
+https://www.urbanfonts.com/fonts/superscript.htm - Superscript font
+
