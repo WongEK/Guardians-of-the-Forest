@@ -1,7 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
 
-
+body{
+    padding: 0;
+    margin: 0;
+}
 /* Style the header */
 .header {
     background-color: #00aa0e;
@@ -67,7 +70,13 @@ body {
 
 #game {
     
-    background: url('../assets/background/startBackground.png');
+    background: url('../assets/sprites/grassField1.png');
 
 }
+#start{
+    background: url('../assets/background/startBackground.png');
+}
 
+canvas{
+    margin: 0;
+}
