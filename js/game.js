@@ -1,6 +1,6 @@
 //startup variables
-var canvas = document.getElementById("game");
-var ctx = canvas.getContext("2d");
+var canvas1 = document.getElementById("game");
+var ctx1 = canvas1.getContext("2d");
 
 //plays music, node.js doesn't run require on browser/client
 /**var player = require('play-sound')(opts = {})
@@ -11,15 +11,15 @@ var ctx = canvas.getContext("2d");
  });
 */
 //add evenlistener to check for clicking fires
-canvas.addEventListener('mousedown', function(e) {
-	var loc = windowToCanvas(e.clientX, e.clientY);
+canvas1.addEventListener('mousedown', function(e) {
+	var loc = windowTocanvas1(e.clientX, e.clientY);
 	fireExtinguish(loc.x, loc.y);
 });
 
-function windowToCanvas(x, y) {
-    var r = canvas.getBoundingClientRect();
-    return { x: x - r.left * (canvas.width  / r.width),
-             y: y - r.top  * (canvas.height / r.height)};
+function windowTocanvas1(x, y) {
+    var r = canvas1.getBoundingClientRect();
+    return { x: x - r.left * (canvas1.width  / r.width),
+             y: y - r.top  * (canvas1.height / r.height)};
 };
 
 //variable for userscore
@@ -27,9 +27,9 @@ var userScore = 0;
 
 //Setup score
 function setupScore() {
-    ctx.font = "42pt VT323";
-    ctx.fillStyle = "white";
-    ctx.fillText("Score: " + userScore, 10, 35);
+    ctx1.font = "42pt VT323";
+    ctx1.fillStyle = "white";
+    ctx1.fillText("Score: " + userScore, 10, 35);
 }
 
 //holds trees
@@ -43,7 +43,8 @@ var fireArr = [];
 //tree image
  var tree = new Image();
 	tree.src = "assets/sprites/tree.png";
-	
+
+//fire image	
 var fire = new Image();
 	fire.src = "assets/sprites/fireAnimation.gif";
 
@@ -64,7 +65,7 @@ function genTrees() {
         
         //for loop to draw images
         for (let i = 0; i < 200; i++) {
-            ctx.drawImage(tree, treeArr[i].x, treeArr[i].y);
+            ctx1.drawImage(tree, treeArr[i].x, treeArr[i].y);
         }
         //call the setup score function
         setupScore();
@@ -84,7 +85,7 @@ function reGenTrees() {
     
     newTree.onload = function() {
         for (let i = 0; i < 200; i++) {
-            ctx.drawImage(newTree, treeArr[i].x, treeArr[i].y);
+            ctx1.drawImage(newTree, treeArr[i].x, treeArr[i].y);
         }
         setupScore();
     }
@@ -102,7 +103,7 @@ function fireGeneration() {
 	fire.onload = function() {
 		for (let i = 0; i < treeArr.length; i++) {
 			if(coin < 3) { //1/3 chance of fires starting to appear
-			ctx.drawImage(fire, treeArr[i].x, treeArr[i].y);
+			ctx1.drawImage(fire, treeArr[i].x, treeArr[i].y);
 				fireArr.push({
 				x: treeArr[i].x,
 				y: treeArr[i].y
@@ -128,7 +129,7 @@ function reGenFires() {
             //console.log(fireArr[i].x + " is the x");
 			 // console.log(fireArr[i].y + " is the y");
              if (fireArr[i].x && fireArr[i].y) {
-                ctx.drawImage(newFire, fireArr[i].x, fireArr[i].y);
+                ctx1.drawImage(newFire, fireArr[i].x, fireArr[i].y);
              }
             
         }
@@ -140,8 +141,8 @@ function reGenFires() {
 //Extinguish the fire clicked
 function fireExtinguish(x, y) {
 	
-    // Use the identity matrix while clearing the canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Use the identity matrix while clearing the canvas1
+    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
     
 	for (let i = 0; i < fireArr.length; i++) {
 		 
@@ -155,7 +156,7 @@ function fireExtinguish(x, y) {
             userScore += 10;
             fireArr[i].x = null;
 			fireArr[i].y = null;
-			ctx.drawImage(tree, treeArr[i].x, treeArr[i].y);
+			ctx1.drawImage(tree, treeArr[i].x, treeArr[i].y);
         }
 	}
 
