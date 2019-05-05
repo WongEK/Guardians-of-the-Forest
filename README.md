@@ -4,7 +4,6 @@ Developed for the 'Girls in Tech' Hackathon in Vancouver, BC, on May 4-5 2019.
 
 <i>Play it here!</i>
 https://guardians-of-the-forest-206f6.firebaseapp.com/
-<br>
 
 Created by team 9:
 <ul>
@@ -30,7 +29,7 @@ This falls under <i>scenario 4</i> as given by Hacking for Humanity, and it also
 
 <b>What technologies we used</b>
 
-The game was developed in pure, unadulteraded JavaScript- a solution we would never recommend for designing a game. While it works, it was extremely difficult to develop and implement (especially in only two days!). We didn't get as far as we would've liked but we feel we managed to give a good idea of what we want to do.
+The game was developed in pure, unadulteraded HTML Canvas with JavaScript- a solution we would never recommend for designing a game. While it works, it was extremely difficult to develop and implement (especially in only two days!). We didn't get as far as we would've liked but we feel we managed to give a good idea of what we want to do.
 Besides JavaScript, we used only CSS for the design on the home and learn more pages. Node.js was used for testing on a local server, and when the game was finished we hosted it with Firebase (link to that page at the top of the readme). The sprites for the game were designed with <i>Piskel</i>, a pixel art editor, linked below in the resources.
 
 <br>
@@ -41,8 +40,8 @@ With JavaScript, everything can feel difficult. That being said, the most involv
 
 <br>
 
-<b>What are the next steps?</b>
-
+<b>What are the next steps to complete the project?</b>
+In order to complete the project, we would like to implement more of the features we wanted. Features such as: trees growing over time just like the fires, tree variations, sounds effects and music, leaderboard of the top 3 scores on a global scale as well as your score and position (rank 53 score: 10000). 
 
 
 
@@ -51,4 +50,5 @@ https://firebase.google.com - Firebase, used for hosting the site<br>
 https://www.piskelapp.com - Piskel, a pixel art editor<br>
 https://www.urbanfonts.com/fonts/superscript.htm - Superscript font<br>
 https://fonts.googleapis.com/css?family=Press+Start+2P|VT323 - Press Start 2P & VT323 fonts
+
 
