@@ -5,15 +5,14 @@ body {
 
 /*Main container for facts*/
 .factContainer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-top: 10pt;
-    font-family: 'Titillium Web', sans-serif;
-    box-shadow: 1px 1px 25px #888888;
-    border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10pt;
+  font-family: 'Titillium Web', sans-serif;
+  box-shadow: 1px 1px 25px #888888;
+  border-radius: 25px;
 }
-
 
 .factContainer:hover {
   box-shadow: 1px 1px 10px #888888;
@@ -26,7 +25,6 @@ body {
   text-align: center;
   flex-basis: 50%;
   padding: 10pt;
-    text-decoration: none;
 }
 
 /*Controls the right side of the fact container (The image)*/
