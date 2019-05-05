@@ -78,10 +78,37 @@ function reGenTrees() {
     
 }
 
+var shift = 0;
+var spriteWidth = 64;
+var spriteHeight = 64;
+var totalFireFrames = 24;
+var currentFireFrame =0;
+
 //semi-random fire generation
 function fireGeneration() {
 	var fire = new Image();
-	fire.src = "../assets/sprites/fireAnimation.gif";
+    fire.src = "../assets/sprites/fireAnimation.gif";
+
+    // function loadFireImage(xPosition, yPosition) {
+    //     console.log("Load Fire");
+    //     animateFire(xPosition, yPosition);
+    // }
+
+    // function animateFire(xPosition, yPosition) {
+
+    // ctx.drawImage(fire, shift, 0, spriteWidth, spriteHeight, xPosition, yPosition, spriteWidth, spriteHeight);
+
+    // shift += spriteWidth;
+
+    // if (currentFireFrame == totalFireFrames) {
+    //     shift = 0;
+    //     currentFireFrame =0;
+    // }
+
+    // currentFireFrame++;
+
+    // requestAnimationFrame(animateFire);
+    // }
 	
 	//var coin = Math.floor(Math.random() * 2); //0,1
 	
@@ -89,8 +116,10 @@ function fireGeneration() {
 
 	fire.onload = function() {
 		for (let i = 0; i < treeArr.length; i++) {
-			if(coin < 3) { //1/3 chance of fires starting to appear
-			ctx.drawImage(fire, treeArr[i].x, treeArr[i].y);
+            if(coin < 3) { //1/3 chance of fires starting to appear
+            ctx.drawImage(fire, treeArr[i].x, treeArr[i].y);
+            // ctx.drawImage(fire, shift, 0, spriteWidth, spriteHeight, treeArr[i].x, treeArr[i].y, spriteWidth, spriteHeight);
+            // loadFireImage(treeArr[i].x, treeArr[i].y);
 				fireArr.push({
 				x: treeArr[i].x,
 				y: treeArr[i].y
