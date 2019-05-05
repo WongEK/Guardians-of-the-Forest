@@ -5,12 +5,12 @@ Developed for the 'Girls in Tech' Hackathon in Vancouver, BC, on May 4-5 2019.
 <i>Play it here!</i>
 https://guardians-of-the-forest-206f6.firebaseapp.com/
 
-Created by team 9:
+Created by team 9, the 'Guardians of the Forestry'!
 <ul>
-  <li>Debby</li>
-  <li>Josh</li>
-  <li>Edmond</li>
-  <li>Sasha</li>
+  <li>Debby Chiu</li>
+  <li>Josh Geransky</li>
+  <li>Edmond Wong</li>
+  <li>Aleksandra Sorokina</li>
 
 ------------------------------------------------------------------------------------------------------------------------------
 
