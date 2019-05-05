@@ -10,6 +10,7 @@ var canvas3 = document.getElementById("gameOver");
 document.getElementById("game").style.display = "none";
 var ctx2 = canvas2.getContext("2d");
 var header = 'Guardians of the Forest';
+var instructions = 'Tap the fires to put them out!';
 var startBackground = new Image();
 startBackground.src = "../assets/background/startBackground.png";
 var loaded = false;
@@ -83,7 +84,7 @@ function createText() {
     ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
     
     
-    ctx2.fillText('Tap the fires to put them out!', canvas2.width/7, canvas2.height/1.2);
+    ctx2.fillText(instructions, canvas2.width/7, canvas2.height/1.2);
     //ctx2.fillText('Created by Team 9', canvas2.width/2.9, canvas2.height/1.015);
 }
 
@@ -197,7 +198,11 @@ function reGenFires() {
 
 function makeFire() {
     
-    if (fireArr.length == treeArr.length) {
+    var noMoreFires = false;
+    
+    if (fireArr.length > 100) {
+        
+        noMoreFires = true;
         
         //game over code goes here
         
@@ -205,6 +210,8 @@ function makeFire() {
     
     if (startedGame == true) {
     
+    if (noMoreFires == false) {
+        
     var f = new Image();
     f.src = 'assets/sprites/fireAnimation.gif';
     
@@ -249,6 +256,7 @@ function makeFire() {
     if (fireCounter > 25 && siStage == false) {
         sixthStage();
         siStage = true;
+    }
     }
     }
 
