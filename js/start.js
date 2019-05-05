@@ -32,7 +32,7 @@ myImage.addEventListener("load", loadImage, false);
 var gameOverScreen = new Image(); 
 gameOverScreen.src = "../assets/gameOver/gameOver.png";
 
-// Create variables for the fires
+// Create the variables for the fires
 var fireCounter = 0;
 var secStage = false;
 var thStage = false;
