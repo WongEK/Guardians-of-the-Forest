@@ -3,8 +3,8 @@
 var canvas2 = document.getElementById("start");
 var canvas1 = document.getElementById("game");
 document.getElementById("game").style.display = "none";
-var ctx2 = canvas2.getContext("2d");
-// var ctx = document.getContext("2d");
+var ctx = canvas2.getContext("2d");
+// var ctx1 = document.getContext("2d");
 var header = 'Guardians of the Forest';
 
 //background image variable and load
@@ -26,8 +26,8 @@ myImage.addEventListener("load", loadImage, false);
 
 
 
-ctx2.canvas.addEventListener('click', function(e){
-    ctx2.translate(0, 0);
+ctx.canvas.addEventListener('click', function(e){
+    ctx.translate(0, 0);
     var mouseX = e.clientX;
     var mouseY = e.clientY;
     console.log(mouseX);
@@ -52,23 +52,23 @@ function loadImage(e) {
   }
 
 function createText(){
-    ctx2.font ="20px 'Press Start 2P'";
-    ctx2.fillStyle = "white";
-    ctx2.fillText(header, canvas2.width/5, canvas2.height/6);
+    ctx.font ="20px 'Press Start 2P'";
+    ctx.fillStyle = "white";
+    ctx.fillText(header, canvas2.width/5, canvas2.height/6);
 }
 
 function loadButton(e){
-    ctx2.drawImage(button, 350, 180, 260, 150);
+    ctx.drawImage(button, 350, 180, 260, 150);
 
 }
 
 function animate() {
-    ctx2.save();
-    ctx2.clearRect(25, 25, 360, 360);
+    ctx.save();
+    ctx.clearRect(25, 25, 360, 360);
     createText();
     loadButton();
     //draw each frame + place them in the middle
-    ctx2.drawImage(myImage, shift, 0, frameWidth, frameHeight,
+    ctx.drawImage(myImage, shift, 0, frameWidth, frameHeight,
                         25, 25, frameWidth, frameHeight);
     shift += frameWidth;
     if (currentFrame == totalFrames) {

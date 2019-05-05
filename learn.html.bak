@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Guardians of the Forest - Learn</title>
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+        <link rel="stylesheet" type="text/css" href="style/learn.css">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
+        
+    </head>
+    
+    <body>
+    
+        <div class="header">
+            
+            <span class="site-title">Guardians of the Forest</span>
+            <div class="navigation">
+                <a href='index.html'>Game</a>
+                <a href='' class='active'>Learn More</a>
+            </div>
+      </div>
+      
+      <div id="factContainer">
+        <div id="factText">
+          <span>Andrew's Amazing Camping Trip</span>
+          <p>Read up on Andrew's latest adventure through the forest!</p>
+          <a href="">Story Link</a>
+        </div>
+<<<<<<< HEAD
+        
+        
+        <div id="content">
+        
+=======
+        <div id="factImage">
+          <img src="assets/images/pictureBook.jpg" alt="Story">
+>>>>>>> b54a354ffb728b3d48ca077c89208a9d233b74f9
+        </div>
+      </div>
+    
+    </body>
+    
+    
+</html>
