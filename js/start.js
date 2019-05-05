@@ -100,7 +100,6 @@ function animate() {
     ctx2.clearRect(25, 25, 360, 360);
     createText();
     loadButton();
-    
     //draw each frame + place them in the middle
     ctx2.drawImage(myImage, shift, 0, frameWidth, frameHeight,
                         25, 25, frameWidth, frameHeight);
@@ -312,7 +311,6 @@ function fireExtinguish(x, y) {
 /* ----- CALLING FUNCTIONS ----- */
 
 genTrees();
-
 firstStage();
 
 
