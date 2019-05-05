@@ -4,10 +4,16 @@
 var canvas1 = document.getElementById("game");
 var ctx1 = canvas1.getContext("2d");
 
+document.getElementById("game").style.display = "none";
+
 //startup variables
 var canvas2 = document.getElementById("start");
+var ctx2 = canvas2.getContext("2d");
+
 var canvas3 = document.getElementById("gameOver");
-document.getElementById("game").style.display = "none";
+document.getElementById("gameOver").style.display = "none";
+
+
 var ctx2 = canvas2.getContext("2d");
 var header = 'Guardians of the Forest';
 var startBackground = new Image();
@@ -24,7 +30,8 @@ button.addEventListener("load", loadButton, false);
 var myImage = new Image();
 myImage.src = "../assets/background/fireLong.png";
 myImage.addEventListener("load", loadImage, false);
-
+var gameOverScreen = new Image(); 
+gameOverScreen.src = "../assets/background/fireLong.png";
 
 
 
@@ -45,7 +52,6 @@ ctx2.canvas.addEventListener('click', function(e){
 function swapCanvases(){
     canvas1.style.display ='inline-block';
     canvas2.style.display ='none';
-    canvas1.style.margin = 'marg%';
   }
 
 
@@ -254,3 +260,12 @@ function fireExtinguish(x, y) {
 /* ----- CALLING FUNCTIONS ----- */
 genTrees();
 fireGeneration();
+
+
+
+
+
+/* Gameover screen generations */
+
+
+

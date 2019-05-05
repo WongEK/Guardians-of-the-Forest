@@ -91,6 +91,14 @@ body {
     background: url('../assets/background/startBackground.png');
 }
 
+#gameOver{
+    background: url('../assets/background/startBackground.png');
+}
+
+#popup{
+    background: url('../assets/background/popupBackground.png');
+}
+
 canvas{
     margin: 0;
 }
