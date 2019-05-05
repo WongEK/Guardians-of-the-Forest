@@ -78,7 +78,7 @@ ctx2.canvas.addEventListener('click', function(e){
     ctx2.translate(0, 0);
     var mouseX = e.clientX;
     var mouseY = e.clientY;
-    if (mouseX > 591 && mouseX < 749 && mouseY > 245 && mouseY < 391){
+    if (mouseX > 200 && mouseX < 900 && mouseY > 200 && mouseY < 650){
         startedGame = true;
         swapCanvases();
     }
@@ -123,7 +123,7 @@ function createText() {
 }
 
 // Start button on start screen
-function loadButton(e){
+function loadButton(e) {
     ctx2.drawImage(button, 350, 180, 260, 150);
 }
 
