@@ -1,7 +1,10 @@
 
 //startup variables
-var canvas = document.getElementById("game");
-var ctx = canvas.getContext("2d");
+var canvas2 = document.getElementById("start");
+var canvas1 = document.getElementById("game");
+document.getElementById("game").style.display = "none";
+var ctx = canvas2.getContext("2d");
+// var ctx1 = document.getContext("2d");
 var header = 'Guardians of the Forest';
 
 //background image variable and load
@@ -21,50 +24,43 @@ myImage.src = "../assets/background/fireLong.png";
 myImage.addEventListener("load", loadImage, false);
  
 
-// function for text
-function handleLoaded(startBackground) {
-        
-    if(loaded){
-        
-        ctx.font ="40px 'Press Start 2P'";
-        ctx.fillStyle = "white";
-        ctx.fillText(header, canvas.width/5, canvas.height/6);
-        loadImage();
-        
-    }  
-    
-};
 
-//  Save the current transformation canvas
-//    ctx.save();
 
-//    // Use the identity matrix while clearing the canvas
-//    ctx.setTransform(1, 0, 0, 1, 0, 0);
-//    ctx.clearRect(0, 0, ctx.width, ctx.height);
+ctx.canvas.addEventListener('click', function(e){
+    ctx.translate(0, 0);
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+    console.log(mouseX);
+    console.log(mouseY);
+    if (mouseX > 591 && mouseX < 749 && mouseY > 245 && mouseY < 391){
+        swapCanvases();
+    }
 
-//    // Clear the canvas
-//    
+});
 
-//    // Restore the previous transformation canvas
-//    ctx.restore();
 
-function loadImage(e) {
-
-    animate();
+function swapCanvases(){
+    canvas1.style.display ='inline-block';
+    canvas2.style.display ='none';
+    canvas1.style.margin = 'marg%';
 
   }
+
+
+function loadImage(e) {
+    animate();
+  }
+
 function createText(){
     ctx.font ="20px 'Press Start 2P'";
     ctx.fillStyle = "white";
-    ctx.fillText(header, canvas.width/5, canvas.height/6);
+    ctx.fillText(header, canvas2.width/5, canvas2.height/6);
 }
 
 function loadButton(e){
-    
     ctx.drawImage(button, 350, 180, 260, 150);
 
 }
-
 
 function animate() {
     ctx.save();
@@ -79,37 +75,9 @@ function animate() {
         shift = 0;
         currentFrame = 0;
     }
-    currentFrame++; 
-    
-    
+    currentFrame++;  
     requestAnimationFrame(animate);
-    /*
-        Start at the beginning once you've reached the
-        end of your sprite!
-    */
-    
     
 }
 
 
-function fireExtinguish() {
-    	
-    userScore += 10;
-    
-    // Save the current transformation canvas
-    ctx.save();
-    
-    // Use the identity matrix while clearing the canvas
-    ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Clear the canvas
-    ctx.clearRect(0, 0, ctx.width, ctx.height);
-    
-    // Restore the previous transformation canvas
-    ctx.restore();
-    
-    reGenTrees();
-    reGenFires();
-    
-}
